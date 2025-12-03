@@ -1,22 +1,23 @@
 package com.northwind.model;
 
 public class Customer {
+    private String customerId;
+    private String companyName;
+    private String contactName;
+    private String contactTitle;
+    private String address;
+    private String city;
+    private String region;
+    private String postalCode;
+    private String country;
+    private String phone;
+    private String fax;
 
-   private String customerId;
-   private String companyName;
-   private String contactName;
-   private String address;
-   private String city;
-   private String region;
-   private String postalCode;
-   private String country;
-   private String phone;
-   private String fax;
-
-    public Customer(String customerId, String companyName, String contactName, String address, String city, String region, String postalCode, String country, String phone, String fax) {
+    public Customer(String customerId, String companyName, String contactName, String contactTitle, String address, String city, String region, String postalCode, String country, String phone, String fax) {
         this.customerId = customerId;
         this.companyName = companyName;
         this.contactName = contactName;
+        this.contactTitle = contactTitle;
         this.address = address;
         this.city = city;
         this.region = region;
@@ -48,6 +49,14 @@ public class Customer {
 
     public void setContactName(String contactName) {
         this.contactName = contactName;
+    }
+
+    public String getContactTitle() {
+        return contactTitle;
+    }
+
+    public void setContactTitle(String contactTitle) {
+        this.contactTitle = contactTitle;
     }
 
     public String getAddress() {
