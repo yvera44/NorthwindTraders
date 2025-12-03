@@ -11,10 +11,7 @@ public class Application {
 
         String username = args[0];
         String password = args[1];
-        String url = "jdbc:mysql://localhost:3306/Northwind";
-
-        System.out.println(username);
-        System.out.println(password);
+        String url = "jdbc:mysql://localhost:3306/northwind";
 
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl(url);
