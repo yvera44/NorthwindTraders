@@ -9,10 +9,10 @@ public class Product {
     private double unitPrice;
     private int unitsInStock;
     private int unitsOnOrder;
-    private int reorderLeve;
+    private int reorderLevel;
     private boolean discontinued;
 
-    public Product(int productId, String productName, int supplierId, int categoryId, String quantityPerUnit, double unitPrice, int unitsInStock, int unitsOnOrder, int reorderLeve, boolean discontinued) {
+    public Product(int productId, String productName, int supplierId, int categoryId, String quantityPerUnit, double unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, boolean discontinued) {
         this.productId = productId;
         this.productName = productName;
         this.supplierId = supplierId;
@@ -21,7 +21,7 @@ public class Product {
         this.unitPrice = unitPrice;
         this.unitsInStock = unitsInStock;
         this.unitsOnOrder = unitsOnOrder;
-        this.reorderLeve = reorderLeve;
+        this.reorderLevel = reorderLevel;
         this.discontinued = discontinued;
     }
 
@@ -89,12 +89,12 @@ public class Product {
         this.unitsOnOrder = unitsOnOrder;
     }
 
-    public int getReorderLeve() {
-        return reorderLeve;
+    public int getReorderLevel() {
+        return reorderLevel;
     }
 
-    public void setReorderLeve(int reorderLeve) {
-        this.reorderLeve = reorderLeve;
+    public void setReorderLevel(int reorderLevel) {
+        this.reorderLevel = reorderLevel;
     }
 
     public boolean isDiscontinued() {
@@ -116,7 +116,7 @@ public class Product {
                 " unitPrice = " + unitPrice + '\n' +
                 " unitsInStock = " + unitsInStock + '\n' +
                 " unitsOnOrder = " + unitsOnOrder + '\n' +
-                " reorderLeve = " + reorderLeve + '\n' +
+                " reorderLeve = " + reorderLevel + '\n' +
                 " discontinued = " + discontinued + '\n' + '\n';
     }
 }

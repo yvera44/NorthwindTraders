@@ -119,10 +119,8 @@ public class Application {
             System.out.println("Product 12 not found.");
         }
 
-
-
-        OrderDetailDao orderDetailDdao = new OrderDetailDao(dataSource);
-        List<OrderDetail> orderDetails = orderDetailDdao.getAll();
+        OrderDetailDao orderDetaildao = new OrderDetailDao(dataSource);
+        List<OrderDetail> orderDetails = orderDetaildao.getAll();
         System.out.println(orderDetails);
 
     }
