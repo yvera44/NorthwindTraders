@@ -99,12 +99,27 @@ public class Application {
         }
 
         System.out.println("\n========================================");
-        System.out.println("TESTING SHIPPER DAO");
+        System.out.println("TESTING PRODUCT DAO");
         System.out.println("========================================\n");
 
         ProductDao productDao = new ProductDao(dataSource);
+
+        System.out.println("--- Test 1: Get All Products ---");
         List<Product> products = productDao.getAll();
-        System.out.println(products);
+        System.out.println("Total Products: " + products.size());
+        if(!products.isEmpty()) {
+            System.out.println("First Product: " + products.get(0));
+        }
+
+        System.out.println("\n --- Test 2: Find Product by ID ---");
+        Product foundProduct = productDao.find(12);
+        if(foundProduct != null){
+            System.out.println("Found " + foundProduct);
+        } else {
+            System.out.println("Product 12 not found.");
+        }
+
+
 
         OrderDetailDao orderDetailDdao = new OrderDetailDao(dataSource);
         List<OrderDetail> orderDetails = orderDetailDdao.getAll();
