@@ -87,7 +87,6 @@ public class CustomerDao {
                             resultSet.getString("Phone"),
                             resultSet.getString("Fax"));
                 }
-
             }
         } catch (SQLException e) {
             System.out.println("There was an error retrieving the data. Please try again.");

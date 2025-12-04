@@ -54,4 +54,42 @@ public class ProductDao {
 
         return products;
     }
+
+    public Product find(Integer productId){
+        Product product = null;
+
+        String query = """
+                SELECT ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued
+                FROM Products;
+                WHERE ProductID = ?;
+                """;
+
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setInt(1, productId);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+
+                if (resultSet.next()){
+                    product = new Product(
+                            resultSet.getInt("ProductID"),
+                            resultSet.getString("ProductName"),
+                            resultSet.getInt("SupplierID"),
+                            resultSet.getInt("CategoryID"),
+                            resultSet.getString("QuantityPerUnit"),
+                            resultSet.getDouble("UnitPrice"),
+                            resultSet.getInt("UnitsInStock"),
+                            resultSet.getInt("UnitsOnOrder"),
+                            resultSet.getInt("ReorderLevel"),
+                            resultSet.getBoolean("Discontinued"));
+                }
+            }
+
+        }catch (SQLException e) {
+            System.out.println("There was an error retrieving the data. Please try again.");
+            e.printStackTrace();
+        }
+        return product;
+    }
 }
